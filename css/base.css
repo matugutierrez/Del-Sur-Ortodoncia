@@ -19,6 +19,21 @@
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+.pagina-inicio {
+  --ink: oklch(0.32 0.08 300);
+  --ink-soft: oklch(0.43 0.07 300);
+  --bone-deep: oklch(0.955 0.02 305);
+  --stone: oklch(0.55 0.06 300);
+  --mint: oklch(0.65 0.18 350);
+  --clay: oklch(0.7 0.12 330);
+  --sky: oklch(0.94 0.045 305);
+  --sky-deep: oklch(0.88 0.07 305);
+  --line: oklch(0.32 0.08 300 / 0.14);
+  --line-invert: oklch(0.32 0.08 300 / 0.1);
+  --background: var(--bone);
+  --foreground: var(--ink);
+}
+
 .pagina-prepagas {
   --ink: oklch(0.32 0.08 300);
   --ink-soft: oklch(0.43 0.07 300);
@@ -32,6 +47,10 @@
   --line-invert: oklch(0.32 0.08 300 / 0.1);
   --background: var(--bone);
   --foreground: var(--ink);
+}
+
+.pagina-inicio .velo {
+  background: oklch(0.4 0.08 310);
 }
 
 .pagina-prepagas .velo {
@@ -581,7 +600,7 @@ h3 {
   border-bottom: 1px solid var(--line);
   border-bottom-left-radius: 1.25rem;
   border-bottom-right-radius: 1.25rem;
-  box-shadow: 0 30px 60px -30px oklch(0.32 0.07 185 / 0.25);
+  box-shadow: 0 30px 60px -30px color-mix(in oklab, var(--ink) 25%, transparent);
   padding-top: 5.25rem;
   padding-bottom: 1.5rem;
   transform: translateY(-102%);
@@ -757,6 +776,16 @@ h3 {
   min-height: 68px;
   box-sizing: border-box;
   color: var(--ink);
+  background: color-mix(in oklab, var(--sky) 65%, var(--bone));
+  border-radius: 1.1rem;
+  transition:
+    transform 0.45s var(--ease-out-expo),
+    background-color 0.45s var(--ease-out-expo);
+}
+
+.boton-icono:hover {
+  transform: translateY(-3px);
+  background: color-mix(in oklab, var(--sky) 40%, var(--bone));
 }
 
 .boton-icono .tipeo:empty {
@@ -802,22 +831,101 @@ h3 {
   object-fit: contain;
 }
 
+.icono-ig {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  width: 32px;
+  height: 32px;
+  margin: 0;
+  padding-left: 2px;
+  box-sizing: border-box;
+  overflow: visible;
+  color: inherit;
+}
+
+.icono-ig svg {
+  display: block;
+  width: 28px;
+  height: 28px;
+  max-width: none;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Hero: fila de redes sociales (WhatsApp + Instagram) */
+.hero-redes {
+  align-items: center;
+}
+
+@media (max-width: 47.99rem) {
+  .hero-redes {
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding-inline: 20%;
+  }
+
+  .hero-redes .boton-icono {
+    min-width: 64px;
+    min-height: 64px;
+  }
+
+  .hero-redes .tipeo {
+    display: none;
+  }
+}
+
+/* Botón flotante de WhatsApp */
+.wa-flotante {
+  position: fixed;
+  right: 1.15rem;
+  bottom: 1.15rem;
+  z-index: 153;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.5rem;
+  height: 3.5rem;
+  box-sizing: border-box;
+  border-radius: 999px;
+  background: var(--ink);
+  color: var(--bone);
+  box-shadow: 0 16px 32px -14px color-mix(in oklab, var(--ink) 70%, transparent);
+  transition:
+    transform 0.45s var(--ease-out-expo),
+    background-color 0.45s var(--ease-out-expo);
+}
+
+.wa-flotante:hover {
+  transform: translateY(-4px) scale(1.04);
+}
+
+.wa-flotante .icono-wa {
+  padding-left: 1px;
+}
+
+.wa-flotante svg {
+  width: 30px;
+  height: 30px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wa-flotante:hover {
+    transform: none;
+  }
+}
+
 .botones-mobile {
   display: none;
 }
 
-@media (width >=48rem) {
-  .boton-icono {
-    background: color-mix(in oklab, var(--sky) 65%, var(--bone));
-    border-radius: 1.1rem;
-  }
-}
-
 @media (max-width: 47.99rem) {
-  .boton-icono {
-    display: none;
-  }
-
   .botones-mobile {
     display: flex;
     flex-direction: column;
@@ -1002,7 +1110,7 @@ a.celda-cobertura:hover .externo {
 
 .tarjeta-osde:hover {
   transform: translateY(-0.25rem);
-  box-shadow: 0 24px 50px -30px oklch(0.32 0.07 185 / 0.35);
+  box-shadow: 0 24px 50px -30px color-mix(in oklab, var(--ink) 35%, transparent);
 }
 
 .tarjeta-osde img {
@@ -1060,7 +1168,7 @@ a.celda-cobertura:hover .externo {
 }
 
 .pagina-inicio main>section:first-child {
-  background: #E9F3EF;
+  background: color-mix(in oklab, var(--sky) 65%, var(--sky-deep));
 }
 
 .pagina-inicio main>section:first-child .aurora {
@@ -1111,14 +1219,14 @@ a.celda-cobertura:hover .externo {
   border: 1px solid var(--line);
   border-radius: 1.25rem;
   overflow: hidden;
-  background: #E6F2EC;
+  background: #ECE4F7;
   aspect-ratio: 16 / 10;
   transition: transform 0.5s var(--ease-out-expo), box-shadow 0.5s var(--ease-out-expo);
 }
 
 .mapa-dibujo:hover {
   transform: translateY(-0.25rem);
-  box-shadow: 0 24px 50px -30px oklch(0.32 0.07 185 / 0.35);
+  box-shadow: 0 24px 50px -30px color-mix(in oklab, var(--ink) 35%, transparent);
 }
 
 .mapa-dibujo svg {
@@ -1413,7 +1521,7 @@ a.celda-cobertura:hover .externo {
   letter-spacing: 0.22em;
   text-transform: uppercase;
   border-radius: 999px;
-  box-shadow: 0 12px 30px -12px oklch(0.31 0.062 252 / 0.55);
+  box-shadow: 0 12px 30px -12px color-mix(in oklab, var(--ink) 55%, transparent);
   transform: translateY(160%);
   transition: transform 0.6s var(--ease-out-expo);
 }

@@ -18,7 +18,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" />
-  <link rel="stylesheet" href="css/base.css?v=6" />
+  <link rel="stylesheet" href="css/base.css?v=9" />
   <link rel="stylesheet" href="css/utils.css" />
   <link rel="stylesheet" href="css/efectos.css" />
 </head>
@@ -73,7 +73,7 @@
             <p class="fuente-texto parrafo opacidad-70 margen-arriba-6" style="max-width:38ch">
               Atención personalizada, con turnos ágiles y seguimiento del caso.
             </p>
-            <div class="margen-arriba-8 flexible espacio-4 peq-fila">
+            <div class="margen-arriba-8 flexible espacio-4 peq-fila hero-redes">
               <span>
                 <a class="boton-icono"
                   href="https://wa.me/5491160014298?text=%C2%A1Hola%21%20Quiero%20pedir%20un%20turno." target="_blank"
@@ -88,17 +88,14 @@
               <span>
                 <a class="boton-icono boton-icono-claro" href="https://www.instagram.com/gabybrevisodontologia/"
                   target="_blank" rel="noopener noreferrer" aria-label="Ir a Instagram" data-tipeo="Ir a Instagram">
-                  <img src="instagram.png" alt="" aria-hidden="true" width="32" height="32">
+                  <span class="icono-ig" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true">
+                      <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                      <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                    </svg></span>
                   <span class="tipeo" aria-hidden="true"></span>
                 </a>
               </span>
-              <div class="botones-mobile">
-                <a class="boton-mobile boton-mobile-solido"
-                  href="https://wa.me/5491160014298?text=%C2%A1Hola%21%20Quiero%20pedir%20un%20turno." target="_blank"
-                  rel="noopener noreferrer">Pedir turno por WhatsApp</a>
-                <a class="boton-mobile boton-mobile-borde" href="https://www.instagram.com/gabybrevisodontologia/"
-                  target="_blank" rel="noopener noreferrer">Ir a Instagram</a>
-              </div>
             </div>
           </div>
         </div>
@@ -295,21 +292,21 @@
               href="https://www.google.com/maps/dir/?api=1&destination=Mendoza+425+Luis+Guill%C3%B3n+Buenos+Aires"
               target="_blank" rel="noopener noreferrer" aria-label="Abrir cómo llegar en Google Maps">
               <svg viewBox="0 0 640 400" role="img" aria-hidden="true">
-                <rect x="0" y="0" width="640" height="400" fill="#DCEDE7" />
-                <ellipse cx="510" cy="90" rx="120" ry="70" fill="#C8E4D6" />
-                <ellipse cx="110" cy="330" rx="130" ry="60" fill="#C8E4D6" />
+                <rect x="0" y="0" width="640" height="400" fill="#ECE4F7" />
+                <ellipse cx="510" cy="90" rx="120" ry="70" fill="#DDCFF0" />
+                <ellipse cx="110" cy="330" rx="130" ry="60" fill="#DDCFF0" />
                 <path d="M0 130 H640" stroke="#FFFFFF" stroke-width="16" />
                 <path d="M0 265 H640" stroke="#FFFFFF" stroke-width="12" />
                 <path d="M170 0 V400" stroke="#FFFFFF" stroke-width="14" />
                 <path d="M440 0 V400" stroke="#FFFFFF" stroke-width="10" />
                 <path d="M300 130 V265 M170 190 H440 M170 320 H440 M300 0 V130 M530 130 V265" stroke="#FFFFFF"
                   stroke-width="5" opacity="0.7" />
-                <circle cx="355" cy="197" r="26" fill="#0A3D37" opacity="0.12">
+                <circle cx="355" cy="197" r="26" fill="#3A2855" opacity="0.12">
                   <animate attributeName="r" values="16;30" dur="2s" repeatCount="indefinite" />
                   <animate attributeName="opacity" values="0.25;0" dur="2s" repeatCount="indefinite" />
                 </circle>
-                <path d="M355 165c-13 0-21 9-21 20 0 14 21 33 21 33s21-19 21-33c0-11-8-20-21-20z" fill="#0A3D37" />
-                <circle cx="355" cy="185" r="7" fill="#DCEDE7" />
+                <path d="M355 165c-13 0-21 9-21 20 0 14 21 33 21 33s21-19 21-33c0-11-8-20-21-20z" fill="#3A2855" />
+                <circle cx="355" cy="185" r="7" fill="#ECE4F7" />
               </svg>
               <span class="mapa-chip">Mendoza 425 · Luis Guillón</span>
             </a>
@@ -360,6 +357,16 @@
       </div>
     </div>
   </footer>
+
+  <a class="wa-flotante"
+    href="https://wa.me/5491160014298?text=%C2%A1Hola%21%20Quiero%20consultar%20turnos%20y%20servicios." target="_blank"
+    rel="noopener noreferrer" aria-label="Consultar turnos y servicios por WhatsApp">
+    <span class="icono-wa" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true">
+        <path
+          d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.05-1.32A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.18-1.15l-.3-.18-3 .79.8-2.93-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.59-6.15c-.25-.13-1.47-.72-1.7-.81-.23-.08-.4-.12-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.38-1.72-.15-.25-.02-.38.11-.51.11-.11.25-.29.38-.43.12-.15.16-.25.25-.42.08-.17.04-.31-.02-.43-.06-.13-.56-1.35-.77-1.85-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.23.25-.87.85-.87 2.07 0 1.22.89 2.4 1.01 2.56.13.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.47-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.1-.23-.16-.48-.29Z" />
+      </svg></span>
+  </a>
+
   <script src="js/site.js?v=3" defer></script>
   <script src="js/efectos.js?v=3" defer></script>
 </body>
