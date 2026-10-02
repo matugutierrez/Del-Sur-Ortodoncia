@@ -857,7 +857,6 @@ h3 {
   stroke-linejoin: round;
 }
 
-/* Hero: fila de redes sociales (WhatsApp + Instagram) */
 .hero-redes {
   align-items: center;
 }
@@ -881,7 +880,41 @@ h3 {
   }
 }
 
-/* Botón flotante de WhatsApp */
+.hero-foto {
+  display: none;
+}
+
+@media (max-width: 47.99rem) {
+  .hero-foto {
+    display: block;
+    margin-top: 1.25rem;
+    -webkit-mask-image: linear-gradient(to bottom,
+        #000 0%,
+        #000 46%,
+        rgba(0, 0, 0, 0.72) 64%,
+        rgba(0, 0, 0, 0.38) 80%,
+        rgba(0, 0, 0, 0) 100%);
+    mask-image: linear-gradient(to bottom,
+        #000 0%,
+        #000 46%,
+        rgba(0, 0, 0, 0.72) 64%,
+        rgba(0, 0, 0, 0.38) 80%,
+        rgba(0, 0, 0, 0) 100%);
+  }
+
+  .hero-foto img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .hero-foto + .hero-redes {
+    position: relative;
+    z-index: 2;
+    margin-top: -5.25rem;
+  }
+}
+
 .wa-flotante {
   position: fixed;
   right: 1.15rem;
@@ -1882,6 +1915,14 @@ body {
   box-shadow: none;
 }
 
+#pedir-turno .envoltura-especialidades .tarjeta:nth-last-child(-n+2):not(.abierto) .icono-especialidad {
+  transform: scale(0.75);
+}
+
+#pedir-turno .envoltura-especialidades .tarjeta:nth-last-child(3):not(.abierto) .icono-especialidad {
+  transform: scale(0.9);
+}
+
 .contenido-especialidad {
   flex: 1;
   min-width: 0;
@@ -2122,14 +2163,14 @@ body {
 @media (width >=48rem) {
   #pedir-turno .envoltura-especialidades {
     display: grid;
-    grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+    grid-template-columns: minmax(0, 6fr) minmax(0, 6fr);
     gap: 0 2.5rem;
     align-items: start;
     position: relative;
   }
 
   #pedir-turno .envoltura-especialidades .grilla-tarjetas {
-    gap: 1.25rem;
+    gap: 0;
     background: transparent;
     position: relative;
     z-index: 2;
@@ -2137,8 +2178,16 @@ body {
 
   #pedir-turno .envoltura-especialidades .tarjeta {
     border: 1px solid var(--line);
-    border-radius: 1.25rem;
+    border-radius: 0;
     overflow: hidden;
+  }
+
+  #pedir-turno .envoltura-especialidades .tarjeta + .tarjeta {
+    border-top-width: 0;
+  }
+
+  #pedir-turno .envoltura-especialidades .tarjeta.relleno-6 {
+    padding: 0.9rem;
   }
 
   #pedir-turno .decor-especialidades {
@@ -2160,51 +2209,77 @@ body {
   }
 
   #pedir-turno .decor-ortodoncia {
-    margin-top: 1rem;
+    margin-top: 2rem;
     grid-column: 1;
     grid-row: 1;
-    width: min(100%, 12rem);
-    margin-left: -2rem;
-    transform: rotate(-5deg) scale(1.45);
+    width: min(100%, 8.5rem);
+    margin-left: 1rem;
+    transform: rotate(-5deg) scale(1.5);
     -webkit-mask-image: linear-gradient(to right, transparent, #000 28%);
     mask-image: linear-gradient(to right, transparent, #000 28%);
   }
 
   #pedir-turno .decor-conducto {
+    margin-right: 2rem;
     grid-column: 2;
     grid-row: 1;
-    width: min(100%, 12rem);
-    justify-self: center;
-    align-self: start;
-    margin-top: 7rem;
-    transform: rotate(-5deg) scale(1.4);
+    width: min(100%, 8.5rem);
+    margin-top: 6rem;
+    transform: rotate(-5deg) scale(1.5);
   }
 
   #pedir-turno .decor-limpieza {
-    width: min(100%, 12rem);
+    margin-left: 1rem;
+    width: min(100%, 8.5rem);
     grid-column: 1;
     grid-row: 2;
-    margin-left: -1.7rem;
-    margin-top: -3.3rem;
+    margin-top: -3rem;
     transform: rotate(-5deg) scale(1.4);
   }
 
   #pedir-turno .decor-cirugia {
-    width: min(100%, 12rem);
+    margin-left: 1.5rem;
+    width: min(100%, 8.5rem);
     grid-column: 1;
     grid-row: 3;
-    margin-top: 3rem;
+    margin-top: -3rem;
     transform: rotate(-5deg) scale(1.4);
   }
 
   #pedir-turno .decor-protesis {
-    margin-top: -7rem;
+    margin-right: 2rem;
+    margin-top: 2rem;
     grid-column: 2;
-    grid-row: 2 / span 2;
     align-self: center;
-    width: min(100%, 12rem);
-    justify-self: center;
-    transform: rotate(-5deg) scale(1.35);
+    width: min(100%, 8.5rem);
+    transform: rotate(-5deg) scale(1.4);
+  }
+
+  #pedir-turno .decor-odontopediatria {
+    margin-right: 2rem;
+    grid-column: 2;
+    grid-row: 4;
+    width: min(100%, 8.5rem);
+    margin-top: -4.5rem;
+    transform: rotate(-5deg) scale(1.5);
+  }
+
+  #pedir-turno .decor-arreglos {
+    grid-column: 1;
+    grid-row: 4;
+    width: min(100%, 8.5rem);
+    margin-top: 0rem;
+    margin-left: 1.5rem;
+    transform: rotate(-5deg) scale(1.4);
+  }
+
+  #pedir-turno .decor-trastornos {
+    margin-right: 2rem;
+    grid-column: 2;
+    grid-row: 5;
+    width: min(100%, 8.5rem);
+    margin-top: -4rem;
+    transform: rotate(-5deg) scale(1.5);
   }
 }
 
@@ -2225,37 +2300,59 @@ body {
   #pedir-turno .decor-ortodoncia {
     grid-column: 1;
     grid-row: 1;
-    width: min(150%, 18rem);
-    margin-top: 0;
+    width: min(100%, 9rem);
+    margin-top: 1rem;
   }
 
   #pedir-turno .decor-conducto {
     grid-column: 2;
     grid-row: 1;
-    width: min(150%, 18rem);
-    margin-top: 4rem;
+    width: min(100%, 9rem);
+    margin-top: 5.5rem;
   }
 
   #pedir-turno .decor-limpieza {
-    margin-left: -2rem;
+    margin-left: 1.5rem;
     grid-column: 1;
     grid-row: 2;
-    width: min(150%, 18rem);
-    margin-top: -2rem;
+    width: min(100%, 9rem);
+    margin-top: -2.7rem;
   }
 
   #pedir-turno .decor-cirugia {
-    grid-column: 0;
+    grid-column: 1;
     grid-row: 3;
-    width: min(150%, 18rem);
-    margin-top: 4rem;
+    width: min(100%, 9rem);
+    margin-top: 2.3rem;
+    margin-left: 2rem;
   }
 
   #pedir-turno .decor-protesis {
     grid-column: 2;
     grid-row: 2 / span 2;
-    align-self: center;
-    width: min(110%, 18rem);
+    margin-top: -6.7rem;
+    width: min(100%, 9rem);
+  }
+
+  #pedir-turno .decor-odontopediatria {
+    grid-column: 2;
+    grid-row: 4;
+    width: min(100%, 9rem);
+    margin-top: -7.5rem;
+  }
+
+  #pedir-turno .decor-arreglos {
+    grid-column: 1;
+    grid-row: 4;
+    width: min(100%, 9rem);
+    margin-top: -0.5rem;
+  }
+
+  #pedir-turno .decor-trastornos {
+    grid-column: 2;
+    grid-row: 5;
+    width: min(100%, 9rem);
+    margin-top: -7.5rem;
   }
 }
 
