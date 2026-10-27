@@ -2592,7 +2592,6 @@ body {
   }
 }
 
-/* Grilla de prepagas (pagina prepagas) */
 .grilla-prepagas {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -2630,7 +2629,6 @@ body {
   object-fit: contain;
 }
 
-/* Grilla de especialidades (home) */
 .grilla-especialidades {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
