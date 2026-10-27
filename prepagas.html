@@ -6,12 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Prepagas Del Sur Ortodoncia</title>
   <meta name="description"
-    content="Atendemos OSDE en Del Sur Ortodoncia. Consultá tu cobertura por WhatsApp antes de reservar el turno." />
+    content="Atendemos Prepagas en Del Sur Ortodoncia. Consultá tu cobertura por WhatsApp antes de reservar el turno." />
   <meta name="author" content="Del Sur Ortodoncia" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Prepagas Del Sur Ortodoncia" />
   <meta property="og:description"
-    content="Atendemos OSDE en Del Sur Ortodoncia. Consultá tu cobertura por WhatsApp antes de reservar el turno." />
+    content="Atendemos Prepagas en Del Sur Ortodoncia. Consultá tu cobertura por WhatsApp antes de reservar el turno." />
   <meta name="twitter:card" content="summary_large_image" />
   <link rel="icon" href="favicon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -21,6 +21,18 @@
   <link rel="stylesheet" href="css/base.css?v=9" />
   <link rel="stylesheet" href="css/utils.css" />
   <link rel="stylesheet" href="css/efectos.css" />
+  <style>
+    .grilla-prepagas { display:grid; grid-template-columns:repeat(4,1fr); gap:0; border-top:1px solid #d1d5db; border-left:1px solid #d1d5db; background-color:#fff; }
+    .celda-prepaga { display:flex; align-items:center; justify-content:center; padding:1.5rem 1rem; border-right:1px solid #d1d5db; border-bottom:1px solid #d1d5db; min-height:90px; text-decoration:none; transition:box-shadow 0.3s ease, transform 0.3s ease; position:relative; z-index:1; background-color:#fff; }
+    .celda-prepaga:hover { box-shadow:0 4px 12px rgba(0,0,0,0.08); transform:translateY(-2px); z-index:10; background-color:#fff; }
+    .celda-prepaga img { max-width:80px; max-height:40px; object-fit:contain; }
+    @media (max-width:768px) {
+      .grilla-prepagas { grid-template-columns:repeat(2,1fr); }
+      .celda-prepaga { padding:1rem 0.75rem; min-height:80px; }
+      .celda-prepaga img { max-width:70px; max-height:35px; }
+      .ocultar-movil { display:none !important; }
+    }
+  </style>
 </head>
 
 <body class="pagina-prepagas">
@@ -56,8 +68,7 @@
         <p class="fuente-texto parrafo-chico opacidad-60" style="max-width:20rem">Del Sur Ortodoncia, atención
           odontológica con seguimiento del caso.</p>
         <p class="texto-mono-10 mayusculas opacidad-60" style="line-height:2">Dirección: Mendoza 425, Luis
-          Guillón<br />WhatsApp: 11 6001-4298<br />delsurortodoncia@gmail.com</p>
-        <p class="texto-mono-10 mayusculas opacidad-40 med-td">Menú — 6 secciones</p>
+          Guillón</p>
       </div>
     </div>
   </div>
@@ -67,9 +78,9 @@
       <div class="contenedor">
         <h1 class="titulo-grande mayusculas" data-split data-delay="0.1" data-trigger="load"><span
             class="linea-mascara"><span data-line-inner>Atendemos</span></span><span class="linea-mascara"><span
-              data-line-inner>OSDE.</span></span></h1>
+              data-line-inner>Prepagas.</span></span></h1>
         <div class="margen-arriba-10" data-reveal data-y="30" data-delay="0.3" style="max-width:46ch">
-          <p class="fuente-texto parrafo opacidad-70">Trabajamos con OSDE. Lo que cubre cada plan cambia
+          <p class="fuente-texto parrafo opacidad-70">Trabajamos con Prepagas. Lo que cubre cada plan cambia
             según el contrato: confirmalo con nosotros por WhatsApp antes de la primera consulta.</p>
         </div>
       </div>
@@ -84,15 +95,24 @@
             <div data-reveal data-y="30">
               <h2 class="titulo-mediano" style="max-width:14ch">Consultá tu plan.</h2>
               <p class="margen-arriba-6 fuente-texto parrafo-chico opacidad-70" style="max-width:38ch">Tocá la tarjeta y
-                escribinos por WhatsApp: te decimos qué cubre tu plan de OSDE.</p>
+                escribinos por WhatsApp: te decimos qué cubre tu prepaga.</p>
             </div>
           </div>
           <div class="med-cs-8">
-            <a class="tarjeta-osde"
-              href="https://wa.me/5491160014298?text=%C2%A1Hola%21%20Quiero%20saber%20qu%C3%A9%20tratamientos%20cubre%20mi%20plan%20de%20OSDE%20en%20Del%20Sur%20Ortodoncia."
-              target="_blank" rel="noopener noreferrer" aria-label="Consultar por WhatsApp qué cubre OSDE"><img
-                src="assets/logos/osde.png" alt="Logo de OSDE" loading="lazy" /><span class="leyenda">Consultar por
-                WhatsApp →</span></a>
+            <div class="grilla-prepagas">
+              <a href="https://www.osde.com.ar" target="_blank" rel="noopener noreferrer" aria-label="Sitio oficial de OSDE" class="celda-prepaga"><img src="assets/logos/osde.png" alt="OSDE" loading="lazy"></a>
+              <a href="https://www.iosfa.org.ar" target="_blank" rel="noopener noreferrer" aria-label="Sitio oficial de IOSFA" class="celda-prepaga ocultar-movil"><img src="assets/logos/iosfa.png" alt="IOSFA" loading="lazy"></a>
+              <a href="https://www.galiciaseguros.com.ar" target="_blank" rel="noopener noreferrer" aria-label="Sitio oficial de Galicia Seguros" class="celda-prepaga"><img src="assets/logos/galicia.png" alt="Galicia Seguros" loading="lazy"></a>
+              <a href="https://www.medife.com.ar" target="_blank" rel="noopener noreferrer" aria-label="Sitio oficial de Medifé" class="celda-prepaga"><img src="assets/logos/medife.png" alt="Medifé" loading="lazy"></a>
+              <a href="https://www.omint.com.ar" target="_blank" rel="noopener noreferrer" aria-label="Sitio oficial de Grupo Omint" class="celda-prepaga"><img src="assets/logos/omint.png" alt="Grupo Omint" loading="lazy"></a>
+              <a href="https://www.pami.org.ar" target="_blank" rel="noopener noreferrer" aria-label="Sitio oficial de PAMI" class="celda-prepaga"><img src="assets/logos/pami.png" alt="PAMI" loading="lazy"></a>
+              <a href="https://www.swissmedical.com" target="_blank" rel="noopener noreferrer" aria-label="Sitio oficial de Swiss Medical" class="celda-prepaga"><img src="assets/logos/swiss.png" alt="Swiss Medical" loading="lazy"></a>
+              <a href="https://www.osseg.com.ar" target="_blank" rel="noopener noreferrer" aria-label="Sitio oficial de OSSEG" class="celda-prepaga"><img src="assets/logos/osseg.png" alt="OSSEG" loading="lazy"></a>
+              <a href="https://www.federada.com.ar" target="_blank" rel="noopener noreferrer" aria-label="Sitio oficial de Federada" class="celda-prepaga ocultar-movil"><img src="assets/logos/federada.png" alt="Federada" loading="lazy"></a>
+              <a href="https://www.amiffa.com.ar" target="_blank" rel="noopener noreferrer" aria-label="Sitio oficial de Amiffa Salud" class="celda-prepaga ocultar-movil"><img src="assets/logos/amffa.png" alt="Amiffa Salud" loading="lazy"></a>
+              <a href="https://www.dasuten.org.ar" target="_blank" rel="noopener noreferrer" aria-label="Sitio oficial de D.A.S.U.Te.N." class="celda-prepaga ocultar-movil"><img src="assets/logos/dasuten.png" alt="D.A.S.U.Te.N." loading="lazy"></a>
+              <div class="celda-prepaga" style="cursor:default;"><span style="font-size:0.875rem; color:#6b7280; font-style:italic;">Y más...</span></div>
+            </div>
           </div>
         </div>
       </div>

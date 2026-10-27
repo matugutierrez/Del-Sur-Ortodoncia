@@ -21,6 +21,35 @@
   <link rel="stylesheet" href="css/base.css?v=11" />
   <link rel="stylesheet" href="css/utils.css" />
   <link rel="stylesheet" href="css/efectos.css" />
+  <style>
+    .grilla-especialidades { display:grid; grid-template-columns:repeat(4,1fr); gap:1rem; margin-top:2rem; }
+    .tarjeta-especialidad { display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:2rem 1rem; background-color:#fff; border-radius:12px; text-decoration:none; color:inherit; transition:box-shadow 0.3s ease, transform 0.3s ease; cursor:pointer; }
+    .tarjeta-especialidad:hover { box-shadow:0 8px 24px rgba(0,0,0,0.1); transform:translateY(-4px); }
+    .tarjeta-especialidad img { width:64px; height:64px; object-fit:contain; margin-bottom:1rem; }
+    .tarjeta-especialidad h3 { font-size:1rem; font-weight:600; margin:0 0 0.5rem; line-height:1.3; }
+    .tarjeta-especialidad p { font-size:0.8rem; opacity:0.6; margin:0; line-height:1.4; }
+
+    /* Grilla de prepagas (home) */
+    .pagina-inicio .seccion-osde .grilla { align-items:center; }
+    .pagina-inicio .seccion-osde .grilla-prepagas { display:grid; grid-template-columns:repeat(4,1fr); gap:0; border-top:1px solid #d1d5db; border-left:1px solid #d1d5db; background-color:#fff; }
+    .pagina-inicio .seccion-osde .celda-prepaga { display:flex; align-items:center; justify-content:center; padding:1.5rem 1rem; border-right:1px solid #d1d5db; border-bottom:1px solid #d1d5db; min-height:100px; text-decoration:none; transition:box-shadow 0.3s ease, transform 0.3s ease; position:relative; z-index:1; background-color:#fff; }
+    .pagina-inicio .seccion-osde .celda-prepaga:hover { box-shadow:0 4px 12px rgba(0,0,0,0.08); transform:translateY(-2px); z-index:10; }
+    .pagina-inicio .seccion-osde .celda-prepaga img { max-width:95px; max-height:48px; object-fit:contain; }
+    .pagina-inicio .seccion-osde .solo-movil { display:none; }
+    @media (max-width:768px) {
+      .grilla-especialidades { grid-template-columns:repeat(2,1fr); gap:0.75rem; }
+      .tarjeta-especialidad { padding:1.5rem 0.75rem; }
+      .tarjeta-especialidad img { width:52px; height:52px; }
+      .tarjeta-especialidad h3 { font-size:0.875rem; }
+      .tarjeta-especialidad p { font-size:0.75rem; }
+      .pagina-inicio .seccion-osde .grilla { align-items:stretch; }
+      .pagina-inicio .seccion-osde .grilla-prepagas { grid-template-columns:repeat(3,1fr); }
+      .pagina-inicio .seccion-osde .celda-prepaga { min-height:80px; }
+      .pagina-inicio .seccion-osde .celda-prepaga img { max-width:70px; max-height:35px; }
+      .pagina-inicio .seccion-osde .ocultar-movil { display:none !important; }
+      .pagina-inicio .seccion-osde .solo-movil { display:block; }
+    }
+  </style>
 </head>
 
 <body class="pagina-inicio">
@@ -116,193 +145,27 @@
           <div class="cabecera-seccion">
             <span class="etiqueta">Especialidades</span>
           </div>
-          <div class="envoltura-especialidades">
-            <div class="grilla-tarjetas margen-arriba-8 med-columnas-1">
-              <div class="tarjeta relleno-6" data-acordeon>
-                <img class="icono-especialidad" src="especialidades/ortodoncia/ortodoncia.png" alt="Icono de ortodoncia" loading="lazy">
-                <div class="contenido-especialidad">
-                <div class="acordeon-cabeza">
-                  <a href="https://wa.me/5491160014298?text=%C2%A1Hola%21%20Quiero%20pedir%20un%20turno%20por%20el%20servicio%20de%20Ortodoncia."
-                    target="_blank" rel="noopener noreferrer" class="fuente-titulo texto-grande"
-                    style="text-decoration: none; color: inherit; flex-grow: 1;">Ortodoncia</a>
-                  <button type="button" data-acordeon-btn aria-expanded="false"
-                    style="background:none; border:none; padding:1rem; margin-right:-0.5rem; cursor:pointer;">
-                    <span class="acordeon-signo" aria-hidden="true" style="font-size: 1.25rem;">+</span>
-                  </button>
-                </div>
-                <div data-acordeon-cuerpo>
-                  <p class="margen-arriba-2 fuente-texto parrafo-chico opacidad-60">Corrección de la posición dentaria
-                    con seguimiento cercano.<span class="extra-pc"> Tratamientos para todas las edades, con controles periódicos.</span></p>
-                  <div class="imagenes-especialidad">
-                    <img src="especialidades/ortodoncia/ORTODONCIA1.png" alt="Ortodoncia 1" loading="lazy">
-                    <img src="especialidades/ortodoncia/ORTODONCIA2.png" alt="Ortodoncia 2" loading="lazy">
-                  </div>
-                </div>
-                </div>
-              </div>
-              <div class="tarjeta relleno-6" data-acordeon>
-                <img class="icono-especialidad" src="especialidades/limpieza%20dental/limpieza.png" alt="Icono de limpieza dental" loading="lazy">
-                <div class="contenido-especialidad">
-                <div class="acordeon-cabeza">
-                  <a href="https://wa.me/5491160014298?text=%C2%A1Hola%21%20Quiero%20pedir%20un%20turno%20por%20el%20servicio%20de%20Limpieza%20dental."
-                    target="_blank" rel="noopener noreferrer" class="fuente-titulo texto-grande"
-                    style="text-decoration: none; color: inherit; flex-grow: 1;">Limpieza dental</a>
-                  <button type="button" data-acordeon-btn aria-expanded="false"
-                    style="background:none; border:none; padding:1rem; margin-right:-0.5rem; cursor:pointer;">
-                    <span class="acordeon-signo" aria-hidden="true" style="font-size: 1.25rem;">+</span>
-                  </button>
-                </div>
-                <div data-acordeon-cuerpo>
-                  <p class="margen-arriba-2 fuente-texto parrafo-chico opacidad-60">Higiene profesional y prevención
-                    para mantener piezas y encías sanas.<span class="extra-pc"> Recomendamos un control cada seis meses.</span></p>
-                  <div class="imagenes-especialidad">
-                    <img src="especialidades/limpieza%20dental/LIMPIEZA%20DENTAL1.png" alt="Limpieza dental 1" loading="lazy">
-                    <img src="especialidades/limpieza%20dental/LIMPIEZA%20DENTAL2.png" alt="Limpieza dental 2" loading="lazy">
-                  </div>
-                </div>
-                </div>
-              </div>
-              <div class="tarjeta relleno-6" data-acordeon>
-                <img class="icono-especialidad" src="especialidades/cirugia%20bucal/cirugia.png" alt="Icono de cirugía bucal" loading="lazy">
-                <div class="contenido-especialidad">
-                <div class="acordeon-cabeza">
-                  <a href="https://wa.me/5491160014298?text=%C2%A1Hola%21%20Quiero%20pedir%20un%20turno%20por%20el%20servicio%20de%20Cirug%C3%ADa%20bucal."
-                    target="_blank" rel="noopener noreferrer" class="fuente-titulo texto-grande"
-                    style="text-decoration: none; color: inherit; flex-grow: 1;">Cirugía bucal</a>
-                  <button type="button" data-acordeon-btn aria-expanded="false"
-                    style="background:none; border:none; padding:1rem; margin-right:-0.5rem; cursor:pointer;">
-                    <span class="acordeon-signo" aria-hidden="true" style="font-size: 1.25rem;">+</span>
-                  </button>
-                </div>
-                <div data-acordeon-cuerpo>
-                  <p class="margen-arriba-2 fuente-texto parrafo-chico opacidad-60">Extracciones y procedimientos
-                    quirúrgicos con evaluación previa.<span class="extra-pc"> Te explicamos cada paso antes del procedimiento.</span></p>
-                  <div class="imagenes-especialidad">
-                    <img src="especialidades/cirugia%20bucal/EXTRACCION1.png" alt="Cirugía bucal 1" loading="lazy">
-                    <img src="especialidades/cirugia%20bucal/EXTRACCION2.png" alt="Cirugía bucal 2" loading="lazy">
-                  </div>
-                </div>
-                </div>
-              </div>
-              <div class="tarjeta relleno-6" data-acordeon>
-                <img class="icono-especialidad" src="especialidades/protesis/protesis.png" alt="Icono de prótesis" loading="lazy">
-                <div class="contenido-especialidad">
-                <div class="acordeon-cabeza">
-                  <a href="https://wa.me/5491160014298?text=%C2%A1Hola%21%20Quiero%20pedir%20un%20turno%20por%20el%20servicio%20de%20Pr%C3%B3tesis."
-                    target="_blank" rel="noopener noreferrer" class="fuente-titulo texto-grande"
-                    style="text-decoration: none; color: inherit; flex-grow: 1;">Prótesis</a>
-                  <button type="button" data-acordeon-btn aria-expanded="false"
-                    style="background:none; border:none; padding:1rem; margin-right:-0.5rem; cursor:pointer;">
-                    <span class="acordeon-signo" aria-hidden="true" style="font-size: 1.25rem;">+</span>
-                  </button>
-                </div>
-                <div data-acordeon-cuerpo>
-                  <p class="margen-arriba-2 fuente-texto parrafo-chico opacidad-60">Reposición de piezas ausentes para
-                    recuperar función y estética.<span class="extra-pc"> Opciones fijas y removibles según tu caso.</span></p>
-                  <div class="imagenes-especialidad">
-                    <img src="especialidades/protesis/PROTESIS1.png" alt="Prótesis 1" loading="lazy">
-                    <img src="especialidades/protesis/PROTESIS2.png" alt="Prótesis 2" loading="lazy">
-                  </div>
-                </div>
-                </div>
-              </div>
-              <div class="tarjeta relleno-6" data-acordeon>
-                <img class="icono-especialidad" src="especialidades/conducto/conducto.png" alt="Icono de tratamiento de conducto" loading="lazy">
-                <div class="contenido-especialidad">
-                <div class="acordeon-cabeza">
-                  <a href="https://wa.me/5491160014298?text=%C2%A1Hola%21%20Quiero%20pedir%20un%20turno%20por%20el%20servicio%20de%20Tratamiento%20de%20conducto."
-                    target="_blank" rel="noopener noreferrer" class="fuente-titulo texto-grande"
-                    style="text-decoration: none; color: inherit; flex-grow: 1;">Tratamientos de conducto</a>
-                  <button type="button" data-acordeon-btn aria-expanded="false"
-                    style="background:none; border:none; padding:1rem; margin-right:-0.5rem; cursor:pointer;">
-                    <span class="acordeon-signo" aria-hidden="true" style="font-size: 1.25rem;">+</span>
-                  </button>
-                </div>
-                <div data-acordeon-cuerpo>
-                  <p class="margen-arriba-2 fuente-texto parrafo-chico opacidad-60">Tratamiento del conducto radicular
-                    para conservar la pieza.<span class="extra-pc"> Diagnóstico y control posterior incluidos.</span></p>
-                  <div class="imagenes-especialidad">
-                    <img src="especialidades/conducto/CONDUCTO1.png" alt="Tratamiento de conducto 1" loading="lazy">
-                    <img src="especialidades/conducto/CONDUCTO2.png" alt="Tratamiento de conducto 2" loading="lazy">
-                  </div>
-                </div>
-                </div>
-              </div>
-              <div class="tarjeta relleno-6" data-acordeon>
-                <img class="icono-especialidad" src="especialidades/odontopediatria/odontopediatria.png" alt="Icono de odontopediatria" loading="lazy">
-                <div class="contenido-especialidad">
-                <div class="acordeon-cabeza">
-                  <a href="https://wa.me/5491160014298?text=%C2%A1Hola%21%20Quiero%20pedir%20un%20turno%20por%20el%20servicio%20de%20Odontopediatria."
-                    target="_blank" rel="noopener noreferrer" class="fuente-titulo texto-grande"
-                    style="text-decoration: none; color: inherit; flex-grow: 1;">Odontopediatria</a>
-                  <button type="button" data-acordeon-btn aria-expanded="false"
-                    style="background:none; border:none; padding:1rem; margin-right:-0.5rem; cursor:pointer;">
-                    <span class="acordeon-signo" aria-hidden="true" style="font-size: 1.25rem;">+</span>
-                  </button>
-                </div>
-                <div data-acordeon-cuerpo>
-                  <p class="margen-arriba-2 fuente-texto parrafo-chico opacidad-60">A completar...</p>
-                  <div class="imagenes-especialidad">
-                    <img src="especialidades/odontopediatria/ODONTOPEDIATRIA1.png" alt="Odontopediatria 1" loading="lazy">
-                    <img src="especialidades/odontopediatria/ODONTOPEDIATRIA2.png" alt="Odontopediatria 2" loading="lazy">
-                  </div>
-                </div>
-                </div>
-              </div>
-              <div class="tarjeta relleno-6" data-acordeon>
-                <img class="icono-especialidad" src="especialidades/arreglos/arreglos.png" alt="Icono de arreglos" loading="lazy">
-                <div class="contenido-especialidad">
-                <div class="acordeon-cabeza">
-                  <a href="https://wa.me/5491160014298?text=%C2%A1Hola%21%20Quiero%20pedir%20un%20turno%20por%20el%20servicio%20de%20Arreglos."
-                    target="_blank" rel="noopener noreferrer" class="fuente-titulo texto-grande"
-                    style="text-decoration: none; color: inherit; flex-grow: 1;">Arreglos</a>
-                  <button type="button" data-acordeon-btn aria-expanded="false"
-                    style="background:none; border:none; padding:1rem; margin-right:-0.5rem; cursor:pointer;">
-                    <span class="acordeon-signo" aria-hidden="true" style="font-size: 1.25rem;">+</span>
-                  </button>
-                </div>
-                <div data-acordeon-cuerpo>
-                  <p class="margen-arriba-2 fuente-texto parrafo-chico opacidad-60">A completar...</p>
-                  <div class="imagenes-especialidad">
-                    <img src="especialidades/arreglos/ARREGLOS1.png" alt="Arreglos 1" loading="lazy">
-                    <img src="especialidades/arreglos/ARREGLOS2.png" alt="Arreglos 2" loading="lazy">
-                  </div>
-                </div>
-                </div>
-              </div>
-              <div class="tarjeta relleno-6" data-acordeon>
-                <img class="icono-especialidad" src="especialidades/transtornos%20temporomandibulares/trastornos.png" alt="Icono de trastornos temporomandibulares" loading="lazy">
-                <div class="contenido-especialidad">
-                <div class="acordeon-cabeza">
-                  <a href="https://wa.me/5491160014298?text=%C2%A1Hola%21%20Quiero%20pedir%20un%20turno%20por%20el%20servicio%20de%20Trastornos%20temporomandibulares."
-                    target="_blank" rel="noopener noreferrer" class="fuente-titulo texto-grande"
-                    style="text-decoration: none; color: inherit; flex-grow: 1;">Trastornos temporomandibulares</a>
-                  <button type="button" data-acordeon-btn aria-expanded="false"
-                    style="background:none; border:none; padding:1rem; margin-right:-0.5rem; cursor:pointer;">
-                    <span class="acordeon-signo" aria-hidden="true" style="font-size: 1.25rem;">+</span>
-                  </button>
-                </div>
-                <div data-acordeon-cuerpo>
-                  <p class="margen-arriba-2 fuente-texto parrafo-chico opacidad-60">A completar...</p>
-                  <div class="imagenes-especialidad">
-                    <img src="especialidades/transtornos%20temporomandibulares/TRASTORNOS1.png" alt="Trastornos temporomandibulares 1" loading="lazy">
-                    <img src="especialidades/transtornos%20temporomandibulares/TRASTORNOS2.png" alt="Trastornos temporomandibulares 2" loading="lazy">
-                  </div>
-                </div>
-                </div>
-              </div>
-            </div>
-          
-            <aside class="decor-especialidades" aria-hidden="true">
-              <img class="decor-img decor-ortodoncia" src="especialidades/ortodoncia/ortodoncia3.png" alt="" loading="lazy">
-              <img class="decor-img decor-conducto" src="especialidades/conducto/conducto3.png" alt="" loading="lazy">
-              <img class="decor-img decor-limpieza" src="especialidades/limpieza%20dental/limpieza3.png" alt="" loading="lazy">
-              <img class="decor-img decor-cirugia" src="especialidades/cirugia%20bucal/cirugia3.png" alt="" loading="lazy">
-              <img class="decor-img decor-protesis" src="especialidades/protesis/protesis3.png" alt="" loading="lazy">
-              <img class="decor-img decor-odontopediatria" src="especialidades/odontopediatria/odontopediatria3.png" alt="" loading="lazy">
-              <img class="decor-img decor-arreglos" src="especialidades/arreglos/arreglos3.png" alt="" loading="lazy">
-              <img class="decor-img decor-trastornos" src="especialidades/transtornos%20temporomandibulares/trastornos3.png" alt="" loading="lazy">
-            </aside>
+          <div class="grilla-especialidades">
+            <a href="https://wa.me/5491160014298?text=%C2%A1Hola%21%20Quiero%20pedir%20un%20turno%20por%20el%20servicio%20de%20Ortodoncia." target="_blank" rel="noopener noreferrer" class="tarjeta-especialidad">
+              <img src="especialidades/ortodoncia/ortodoncia.png" alt="Ortodoncia" loading="lazy">
+              <h3>Ortodoncia</h3>
+              <p>Corrección de la posición dentaria con seguimiento cercano.</p>
+            </a>
+            <a href="https://wa.me/5491160014298?text=%C2%A1Hola%21%20Quiero%20pedir%20un%20turno%20por%20el%20servicio%20de%20Limpieza%20dental." target="_blank" rel="noopener noreferrer" class="tarjeta-especialidad">
+              <img src="especialidades/limpieza%20dental/limpieza.png" alt="Limpieza dental" loading="lazy">
+              <h3>Limpieza dental</h3>
+              <p>Higiene profesional y prevención para mantener piezas y encías sanas.</p>
+            </a>
+            <a href="https://wa.me/5491160014298?text=%C2%A1Hola%21%20Quiero%20pedir%20un%20turno%20por%20el%20servicio%20de%20Cirug%C3%ADa%20bucal." target="_blank" rel="noopener noreferrer" class="tarjeta-especialidad">
+              <img src="especialidades/cirugia%20bucal/cirugia.png" alt="Cirugía bucal" loading="lazy">
+              <h3>Cirugía bucal</h3>
+              <p>Extracciones y procedimientos quirúrgicos con evaluación previa.</p>
+            </a>
+            <a href="https://wa.me/5491160014298?text=%C2%A1Hola%21%20Quiero%20pedir%20un%20turno%20por%20el%20servicio%20de%20Pr%C3%B3tesis." target="_blank" rel="noopener noreferrer" class="tarjeta-especialidad">
+              <img src="especialidades/protesis/protesis.png" alt="Prótesis" loading="lazy">
+              <h3>Prótesis</h3>
+              <p>Reposición de piezas ausentes para recuperar función y estética.</p>
+            </a>
           </div>
         </div>
       </div>
@@ -310,13 +173,13 @@
 
     <section class="fondo-celeste relleno-abajo-8 med-rb-8 relleno-arriba-8 med-ra-12 seccion-osde">
       <div class="contenedor">
-        <div class="cabecera-seccion"><span class="etiqueta">Prepagas</span><span class="derecha etiqueta">OSDE</span>
+        <div class="cabecera-seccion"><span class="etiqueta">Prepagas</span><span class="derecha etiqueta">Varias</span>
         </div>
         <div class="grilla espacio-12 margen-arriba-12 med-columnas-12">
           <div class="med-cs-4">
             <div data-reveal data-y="40">
               <h2 class="titulo-mediano" data-palabras style="max-width:14ch">Atendemos <span
-                  class="texto-verde">OSDE</span>.</h2>
+                  class="texto-verde">prepagas</span>.</h2>
               <p class="margen-arriba-6 fuente-texto parrafo-chico opacidad-70" style="max-width:38ch">Consultá por
                 WhatsApp tu plan específico.</p>
               <ul class="lista-osde fuente-texto texto-chico">
@@ -330,9 +193,21 @@
             </div>
           </div>
           <div class="med-cs-8">
-            <a class="tarjeta-osde" href="https://www.osde.com.ar" target="_blank" rel="noopener noreferrer"
-              aria-label="Ir al sitio de OSDE"><img src="assets/logos/osde.png" alt="Logo de OSDE"
-                loading="lazy" /><span class="leyenda">Sitio oficial de OSDE ↗</span></a>
+            <div class="grilla-prepagas">
+              <a href="https://www.osde.com.ar" target="_blank" rel="noopener noreferrer" aria-label="Sitio oficial de OSDE" class="celda-prepaga"><img src="assets/logos/osde.png" alt="OSDE" loading="lazy"></a>
+              <a href="https://www.iosfa.org.ar" target="_blank" rel="noopener noreferrer" aria-label="Sitio oficial de IOSFA" class="celda-prepaga ocultar-movil"><img src="assets/logos/iosfa.png" alt="IOSFA" loading="lazy"></a>
+              <a href="https://www.galiciaseguros.com.ar" target="_blank" rel="noopener noreferrer" aria-label="Sitio oficial de Galicia Seguros" class="celda-prepaga"><img src="assets/logos/galicia.png" alt="Galicia Seguros" loading="lazy"></a>
+              <a href="https://www.medife.com.ar" target="_blank" rel="noopener noreferrer" aria-label="Sitio oficial de Medifé" class="celda-prepaga"><img src="assets/logos/medife.png" alt="Medifé" loading="lazy"></a>
+              <a href="https://www.omint.com.ar" target="_blank" rel="noopener noreferrer" aria-label="Sitio oficial de Grupo Omint" class="celda-prepaga"><img src="assets/logos/omint.png" alt="Grupo Omint" loading="lazy"></a>
+              <a href="https://www.pami.org.ar" target="_blank" rel="noopener noreferrer" aria-label="Sitio oficial de PAMI" class="celda-prepaga"><img src="assets/logos/pami.png" alt="PAMI" loading="lazy"></a>
+              <a href="https://www.swissmedical.com" target="_blank" rel="noopener noreferrer" aria-label="Sitio oficial de Swiss Medical" class="celda-prepaga"><img src="assets/logos/swiss.png" alt="Swiss Medical" loading="lazy"></a>
+              <a href="https://www.osseg.com.ar" target="_blank" rel="noopener noreferrer" aria-label="Sitio oficial de OSSEG" class="celda-prepaga ocultar-movil"><img src="assets/logos/osseg.png" alt="OSSEG" loading="lazy"></a>
+              <a href="https://www.federada.com.ar" target="_blank" rel="noopener noreferrer" aria-label="Sitio oficial de Federada" class="celda-prepaga ocultar-movil"><img src="assets/logos/federada.png" alt="Federada" loading="lazy"></a>
+              <a href="https://www.amiffa.com.ar" target="_blank" rel="noopener noreferrer" aria-label="Sitio oficial de Amiffa Salud" class="celda-prepaga ocultar-movil"><img src="assets/logos/amffa.png" alt="Amiffa Salud" loading="lazy"></a>
+              <a href="https://www.dasuten.org.ar" target="_blank" rel="noopener noreferrer" aria-label="Sitio oficial de D.A.S.U.Te.N." class="celda-prepaga ocultar-movil"><img src="assets/logos/dasuten.png" alt="D.A.S.U.Te.N." loading="lazy"></a>
+              <div class="celda-prepaga ocultar-movil" style="cursor:default;"><span style="font-size:0.875rem; color:#6b7280; font-style:italic;">Y más...</span></div>
+            </div>
+            <p class="solo-movil" style="text-align:center; margin-top:0.75rem; font-size:0.75rem; color:#6b7280; font-style:italic;">Y más...</p>
           </div>
         </div>
         <div class="margen-arriba-12 solo-pc"><span data-magnetic="0.25"><a class="boton boton-solido"
